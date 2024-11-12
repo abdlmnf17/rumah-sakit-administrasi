@@ -97,9 +97,7 @@
                 </div>
 
                 <br/>
-                <a class="btn btn-secondary">
-                    Silahkan hubungi admin jika lupa password
-                </a>
+
             </div>
         </div>
     </div>

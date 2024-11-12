@@ -31,9 +31,9 @@ class AdminRoleSeeder extends Seeder
             'updated_at' => now(),
         ]);
         User::create([
-            'username' => 'Pemeriksa',
-            'email' => 'pemeriksa@gmail.com',
-            'role' => 'pemeriksa',
+            'username' => 'Dokter',
+            'email' => 'dokter@gmail.com',
+            'role' => 'dokter',
             'password' => Hash::make('password'),
             'created_at' => now(),
             'updated_at' => now(),

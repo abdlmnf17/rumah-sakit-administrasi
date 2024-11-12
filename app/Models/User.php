@@ -11,7 +11,11 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-
+    // Relasi ke RawatInap
+    public function rawatInaps()
+    {
+        return $this->hasMany(RawatInap::class);
+    }
     /**
      * The attributes that are mass assignable.
      *

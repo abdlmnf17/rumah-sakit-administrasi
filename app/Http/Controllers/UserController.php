@@ -32,6 +32,11 @@ class UserController extends Controller
         return view('user.create');
     }
 
+    public function pasien()
+    {
+        return view('auth.register');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -58,7 +63,7 @@ class UserController extends Controller
         ]);
 
 
-        return redirect()->route('user.index')->with('success', 'User berhasil disimpan.');
+        return redirect()->route('home')->with('success', 'User berhasil disimpan.');
 
     }
 

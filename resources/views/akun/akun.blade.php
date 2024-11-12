@@ -32,7 +32,7 @@ $role = auth()->user()->role;
                         <th style="width: 30%">Nama Akun</th>
                         <th style="width: 20%">Jenis</th>
                         <th style="width: 20%">Total</th>
-                        @if ($role === 'pemilik')
+                        @if ($role === 'admin')
                         <th style="width: 25%">Aksi</th>
                         @endif
                     </tr>
@@ -46,7 +46,7 @@ $role = auth()->user()->role;
                         <td>Rp. {{ number_format($akunItem->total, '2',',','.')}}</td>
                         <td>
 
-                            @if ($role === 'pemilik')
+                            @if ($role === 'admin')
                             <a href="{{ route('akun.edit', $akunItem->id) }}" class="btn btn-sm btn-warning">
                                 <i class="fas fa-edit"></i> Edit
                             </a>

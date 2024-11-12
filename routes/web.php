@@ -5,6 +5,7 @@ use App\Http\Controllers\TransaksiKeluarController;
 use App\Http\Controllers\PasienController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\ObatController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\DetailPeriksaController;
 use App\Http\Controllers\PemasokController;
 use Illuminate\Support\Facades\Route;
@@ -58,7 +59,7 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
-Route::middleware(['auth', 'pemilik'])->group(function () {
+Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('user', App\Http\Controllers\UserController::class);
     Route::resource('akun', App\Http\Controllers\AkunController::class);
     Route::resource('transaksi_keluar', App\Http\Controllers\TransaksiKeluarController::class);
@@ -69,6 +70,15 @@ Route::middleware(['auth', 'pemilik'])->group(function () {
 });
 
 
+Route::get('/register-user', [UserController::class, 'pasien'])->name('create.pasien');
+Route::post('/register-store', [UserController::class, 'store'])->name('store.pasien');
+
+Route::middleware(['auth'])->group(function () {
+
+    Route::resource('rawat', App\Http\Controllers\RawatInapController::class);
+    Route::resource('rawat-jalan', App\Http\Controllers\RawatJalanController::class);
+
+});
 
 Route::middleware(['auth', 'pemeriksa'])->group(function () {
 

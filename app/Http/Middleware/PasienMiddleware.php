@@ -4,9 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class pemeriksaMiddleware
+class PasienMiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,11 +16,6 @@ class pemeriksaMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->role == 'dokter') {
-            return $next($request);
-        }
-
-        return redirect('/home')->with('error', 'Tidak bisa mengakses halaman tersebut, kamu bukan pemeriksa/admin');
         return $next($request);
     }
 }

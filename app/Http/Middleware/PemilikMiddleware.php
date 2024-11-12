@@ -17,7 +17,7 @@ class PemilikMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->role == 'pemilik') {
+        if (Auth::check() && Auth::user()->role == 'admin') {
             return $next($request);
         }
 

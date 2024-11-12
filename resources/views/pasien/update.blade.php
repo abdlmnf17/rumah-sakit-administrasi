@@ -64,7 +64,7 @@
     @endif
 
 
-    @if ($role === 'pemeriksa')
+    @if ($role === 'dokter')
         <div class="col-lg-8 mb-10 mx-auto">
             <!-- Project Card Example -->
             <div class="card shadow mb-4">
